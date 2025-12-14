@@ -1,0 +1,91 @@
+# API Comparison Differences - Fix Request
+
+The following endpoints have differences between the local API and Asana API.
+Please analyze and fix the code to match Asana's API responses.
+
+## Differences Found: 1
+
+
+### Endpoint: GET /users/me
+
+**Status Codes:**
+- Local: 200
+- Asana: 200
+
+**Missing Fields in Local API:**
+  - workspaces[0].resource_type
+  - workspaces[0].name
+
+**Extra Fields in Local API:**
+  - custom_fields
+
+**Value Differences:**
+```json
+{
+  "type_changes": {
+    "root['workspaces']": {
+      "old_type": "<class 'list'>",
+      "new_type": "<class 'NoneType'>",
+      "old_value": [
+        {
+          "name": "My workspace",
+          "resource_type": "workspace"
+        }
+      ],
+      "new_value": null
+    }
+  },
+  "dictionary_item_added": {
+    "root['custom_fields']": null
+  },
+  "values_changed": {
+    "root['name']": {
+      "new_value": "John Doe",
+      "old_value": "Anshu"
+    },
+    "root['email']": {
+      "new_value": "john.doe@acme.com",
+      "old_value": "singhanshu1406@gmail.com"
+    }
+  }
+}
+```
+
+**Asana Response Sample:**
+```json
+{
+  "email": "singhanshu1406@gmail.com",
+  "name": "Anshu",
+  "photo": null,
+  "resource_type": "user",
+  "workspaces": [
+    {
+      "name": "My workspace",
+      "resource_type": "workspace"
+    }
+  ]
+}...
+```
+
+**Local Response Sample:**
+```json
+{
+  "resource_type": "user",
+  "name": "John Doe",
+  "email": "john.doe@acme.com",
+  "photo": null,
+  "workspaces": null,
+  "custom_fields": null
+}...
+```
+
+---
+
+
+## Action Required
+
+Please:
+1. Review each difference
+2. Update the endpoint code to match Asana's response structure
+3. Ensure all fields are present with correct types
+4. Verify nested objects match Asana's format

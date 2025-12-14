@@ -1,0 +1,77 @@
+{
+  "total": 7,
+  "matches": 0,
+  "mismatches": 7,
+  "details": [
+    {
+      "scenario": "GET existing workspace",
+      "endpoint": "/workspaces/b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+      "method": "GET",
+      "local_status": 400,
+      "asana_status": 400,
+      "expected_status": 200,
+      "status_match": true,
+      "expected_match": false
+    },
+    {
+      "scenario": "GET existing project",
+      "endpoint": "/projects/2160a419-d194-420a-9225-e73a616ded96",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "expected_status": 200,
+      "status_match": false,
+      "expected_match": false
+    },
+    {
+      "scenario": "GET non-existent project",
+      "endpoint": "/projects/00000000-0000-0000-0000-000000000000",
+      "method": "GET",
+      "local_status": 404,
+      "asana_status": 400,
+      "expected_status": 404,
+      "status_match": false,
+      "expected_match": false
+    },
+    {
+      "scenario": "GET with invalid GID format",
+      "endpoint": "/tasks/invalid-gid-format",
+      "method": "GET",
+      "local_status": 404,
+      "asana_status": 400,
+      "expected_status": 404,
+      "status_match": false,
+      "expected_match": false
+    },
+    {
+      "scenario": "PUT non-existent project",
+      "endpoint": "/projects/00000000-0000-0000-0000-000000000000",
+      "method": "PUT",
+      "local_status": 404,
+      "asana_status": 400,
+      "expected_status": 404,
+      "status_match": false,
+      "expected_match": false
+    },
+    {
+      "scenario": "DELETE non-existent project",
+      "endpoint": "/projects/00000000-0000-0000-0000-000000000000",
+      "method": "DELETE",
+      "local_status": 404,
+      "asana_status": 400,
+      "expected_status": 404,
+      "status_match": false,
+      "expected_match": false
+    },
+    {
+      "scenario": "POST project with invalid data",
+      "endpoint": "/projects",
+      "method": "POST",
+      "local_status": 201,
+      "asana_status": 400,
+      "expected_status": 400,
+      "status_match": false,
+      "expected_match": false
+    }
+  ]
+}

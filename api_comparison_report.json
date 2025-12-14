@@ -1,0 +1,1530 @@
+{
+  "timestamp": "2025-12-14T14:16:33.934303",
+  "summary": {
+    "total_tests": 28,
+    "matches": 2,
+    "differences": 26
+  },
+  "results": [
+    {
+      "endpoint": "/workspaces",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 200,
+      "status_match": true,
+      "local_response": {
+        "data": [
+          {
+            "gid": "b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+            "resource_type": "workspace",
+            "name": "Acme Corporation",
+            "is_organization": true
+          },
+          {
+            "gid": "326e3d27-bf8c-42c7-94ad-a8c55e2ee488",
+            "resource_type": "workspace",
+            "name": "Tech Startup Inc",
+            "is_organization": false
+          }
+        ]
+      },
+      "asana_response": {
+        "data": [
+          {
+            "gid": "1212431066135830",
+            "resource_type": "workspace",
+            "name": "My workspace"
+          }
+        ],
+        "next_page": null
+      },
+      "comparison": {
+        "endpoint": "/workspaces",
+        "differences": {
+          "values_changed": {
+            "root[0]": {
+              "new_value": {
+                "resource_type": "workspace",
+                "name": "Acme Corporation",
+                "is_organization": true
+              },
+              "old_value": {
+                "resource_type": "workspace",
+                "name": "My workspace"
+              }
+            }
+          },
+          "iterable_item_added": {
+            "root[1]": {
+              "resource_type": "workspace",
+              "name": "Tech Startup Inc",
+              "is_organization": false
+            }
+          }
+        },
+        "missing_fields": [],
+        "extra_fields": [
+          "[1].resource_type",
+          "[1].name",
+          "[1].is_organization",
+          "[0].is_organization"
+        ],
+        "local_response": [
+          {
+            "gid": "b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+            "resource_type": "workspace",
+            "name": "Acme Corporation",
+            "is_organization": true
+          },
+          {
+            "gid": "326e3d27-bf8c-42c7-94ad-a8c55e2ee488",
+            "resource_type": "workspace",
+            "name": "Tech Startup Inc",
+            "is_organization": false
+          }
+        ],
+        "asana_response": [
+          {
+            "gid": "1212431066135830",
+            "resource_type": "workspace",
+            "name": "My workspace"
+          }
+        ],
+        "local_normalized": [
+          {
+            "resource_type": "workspace",
+            "name": "Acme Corporation",
+            "is_organization": true
+          },
+          {
+            "resource_type": "workspace",
+            "name": "Tech Startup Inc",
+            "is_organization": false
+          }
+        ],
+        "asana_normalized": [
+          {
+            "resource_type": "workspace",
+            "name": "My workspace"
+          }
+        ]
+      },
+      "status_comparison": {
+        "endpoint": "/workspaces",
+        "local_status": 200,
+        "asana_status": 200,
+        "match": true,
+        "status_match": true
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/users",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "1c4c55f5-2358-4e8a-bcb2-b2fd46470be9",
+            "resource_type": "user",
+            "name": "John Doe",
+            "email": "john.doe@acme.com",
+            "photo": null
+          },
+          {
+            "gid": "d616e6f4-5e67-47ef-bef0-84b55e213e7f",
+            "resource_type": "user",
+            "name": "Jane Smith",
+            "email": "jane.smith@acme.com",
+            "photo": null
+          },
+          {
+            "gid": "2a7cee86-39e4-4008-af00-ecd51b8fe74a",
+            "resource_type": "user",
+            "name": "Bob Johnson",
+            "email": "bob.johnson@acme.com",
+            "photo": null
+          },
+          {
+            "gid": "63060958-d74a-4a47-a3bd-d1c4127e4b83",
+            "resource_type": "user",
+            "name": "Alice Williams",
+            "email": "alice.williams@techstartup.com",
+            "photo": null
+          },
+          {
+            "gid": "14121b47-2113-4a18-98ec-33d5999d8f84",
+            "resource_type": "user",
+            "name": "Charlie Brown",
+            "email": "charlie.brown@techstartup.com",
+            "photo": null
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "Need to specify a workspace to paginate!",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/users",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/teams",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+            "resource_type": "team",
+            "name": "Engineering Team"
+          },
+          {
+            "gid": "bf0255fe-8d94-45a2-ad80-163057da8b30",
+            "resource_type": "team",
+            "name": "Product Team"
+          },
+          {
+            "gid": "2d5b959a-20e4-47c4-9811-8a1d638ea432",
+            "resource_type": "team",
+            "name": "Design Team"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "You should specify one of workspace, organization",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/teams",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "2160a419-d194-420a-9225-e73a616ded96",
+            "resource_type": "project",
+            "name": "Website Redesign",
+            "resource_subtype": null
+          },
+          {
+            "gid": "9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+            "resource_type": "project",
+            "name": "Mobile App Development",
+            "resource_subtype": null
+          },
+          {
+            "gid": "885e895f-379b-4907-a73a-dd58f14a538a",
+            "resource_type": "project",
+            "name": "Marketing Campaign",
+            "resource_subtype": null
+          },
+          {
+            "gid": "9505aed1-0db1-47c6-b0a9-5e7603cee650",
+            "resource_type": "project",
+            "name": "Product Launch",
+            "resource_subtype": null
+          },
+          {
+            "gid": "1f55a350-108b-45ed-9edd-d258b06c28b7",
+            "resource_type": "project",
+            "name": "UI/UX Improvements",
+            "resource_subtype": null
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "Need to specify a workspace to paginate!",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tasks",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "a45c647c-4231-45b9-85eb-01e2ed394140",
+            "resource_type": "task",
+            "name": "Design homepage mockup",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "4e635557-1d2b-426f-a7c0-feabe34939ca",
+            "resource_type": "task",
+            "name": "Implement user authentication",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "0fb29599-c217-48a6-804a-eb049b4a7fab",
+            "resource_type": "task",
+            "name": "Create marketing materials",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "c9761ad3-f5b0-4c78-9877-2172b487eec0",
+            "resource_type": "task",
+            "name": "Write product documentation",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "6e479672-8c27-44b9-aa3d-e58f9195f292",
+            "resource_type": "task",
+            "name": "Design user interface",
+            "resource_subtype": "default_task"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "You should specify one of workspace, project, tag, section, user_task_list",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tasks",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/goals",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "8bec4e63-1ec3-489c-a2d7-c4ca2e73ac10",
+            "resource_type": "goal",
+            "name": "Improve customer satisfaction",
+            "html_notes": null,
+            "notes": null,
+            "due_on": null,
+            "start_on": null,
+            "is_workspace_level": null,
+            "liked": null,
+            "owner": {
+              "gid": "1c4c55f5-2358-4e8a-bcb2-b2fd46470be9",
+              "resource_type": "user",
+              "name": "John Doe",
+              "email": "john.doe@acme.com",
+              "photo": null
+            }
+          },
+          {
+            "gid": "0e633b24-c3aa-40a2-800e-2ee8d3702716",
+            "resource_type": "goal",
+            "name": "ewer",
+            "html_notes": null,
+            "notes": null,
+            "due_on": null,
+            "start_on": null,
+            "is_workspace_level": null,
+            "liked": null,
+            "owner": {
+              "gid": "1c4c55f5-2358-4e8a-bcb2-b2fd46470be9",
+              "resource_type": "user",
+              "name": "John Doe",
+              "email": "john.doe@acme.com",
+              "photo": null
+            }
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "You should specify one of portfolio, project, workspace, team",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/goals",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/portfolios",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "2f4af8c8-f549-4e58-92d9-998d0a93952f",
+            "resource_type": "portfolio",
+            "name": "Strategic Initiatives"
+          },
+          {
+            "gid": "420adca3-77e6-4e50-8f58-48a39fa3e72a",
+            "resource_type": "portfolio",
+            "name": "pw"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "You should specify one of workspace",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/portfolios",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tags",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "0a0ee7c0-5d67-433c-ae6d-7f2707640fe5",
+            "resource_type": "tag",
+            "name": "urgent"
+          },
+          {
+            "gid": "b5b85dab-accb-421c-99f3-e07ddf3860f8",
+            "resource_type": "tag",
+            "name": "frontend"
+          },
+          {
+            "gid": "8e30b641-48bf-4338-b88a-f3ac59a72a4c",
+            "resource_type": "tag",
+            "name": "backend"
+          },
+          {
+            "gid": "9b761b81-d43f-4030-80b7-bb7a4469584c",
+            "resource_type": "tag",
+            "name": "design"
+          },
+          {
+            "gid": "4539da4e-366c-4a88-9ff5-bf18262ddea6",
+            "resource_type": "tag",
+            "name": "marketing"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "Need to specify a workspace to paginate!",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tags",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects/2160a419-d194-420a-9225-e73a616ded96",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "2160a419-d194-420a-9225-e73a616ded96",
+          "resource_type": "project",
+          "name": "Website Redesign",
+          "resource_subtype": null,
+          "archived": false,
+          "color": "blue",
+          "created_at": "2025-12-13T18:07:13.976432+05:30",
+          "current_status": null,
+          "current_status_update": null,
+          "custom_field_settings": null,
+          "default_view": "board",
+          "due_date": null,
+          "due_on": "2026-01-12",
+          "html_notes": null,
+          "members": null,
+          "modified_at": null,
+          "notes": "Project description for Website Redesign",
+          "public": false,
+          "privacy_setting": null,
+          "start_on": "2025-12-13",
+          "default_access_level": null,
+          "minimum_access_level_for_customization": null,
+          "minimum_access_level_for_sharing": null,
+          "custom_fields": null,
+          "completed": null,
+          "completed_at": null,
+          "completed_by": null,
+          "followers": null,
+          "owner": null,
+          "team": null,
+          "icon": null,
+          "permalink_url": null,
+          "project_brief": null,
+          "created_from_template": null,
+          "workspace": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "project: Not a Long: 2160a419-d194-420a-9225-e73a616ded96",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects/2160a419-d194-420a-9225-e73a616ded96",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects/9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+          "resource_type": "project",
+          "name": "Mobile App Development",
+          "resource_subtype": null,
+          "archived": false,
+          "color": "green",
+          "created_at": "2025-12-13T18:07:13.976432+05:30",
+          "current_status": null,
+          "current_status_update": null,
+          "custom_field_settings": null,
+          "default_view": "board",
+          "due_date": null,
+          "due_on": "2026-01-12",
+          "html_notes": null,
+          "members": null,
+          "modified_at": null,
+          "notes": "Project description for Mobile App Development",
+          "public": false,
+          "privacy_setting": null,
+          "start_on": "2025-12-13",
+          "default_access_level": null,
+          "minimum_access_level_for_customization": null,
+          "minimum_access_level_for_sharing": null,
+          "custom_fields": null,
+          "completed": null,
+          "completed_at": null,
+          "completed_by": null,
+          "followers": null,
+          "owner": null,
+          "team": null,
+          "icon": null,
+          "permalink_url": null,
+          "project_brief": null,
+          "created_from_template": null,
+          "workspace": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "project: Not a Long: 9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects/9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects/885e895f-379b-4907-a73a-dd58f14a538a",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "885e895f-379b-4907-a73a-dd58f14a538a",
+          "resource_type": "project",
+          "name": "Marketing Campaign",
+          "resource_subtype": null,
+          "archived": false,
+          "color": "purple",
+          "created_at": "2025-12-13T18:07:13.976432+05:30",
+          "current_status": null,
+          "current_status_update": null,
+          "custom_field_settings": null,
+          "default_view": "board",
+          "due_date": null,
+          "due_on": "2026-01-12",
+          "html_notes": null,
+          "members": null,
+          "modified_at": null,
+          "notes": "Project description for Marketing Campaign",
+          "public": false,
+          "privacy_setting": null,
+          "start_on": "2025-12-13",
+          "default_access_level": null,
+          "minimum_access_level_for_customization": null,
+          "minimum_access_level_for_sharing": null,
+          "custom_fields": null,
+          "completed": null,
+          "completed_at": null,
+          "completed_by": null,
+          "followers": null,
+          "owner": null,
+          "team": null,
+          "icon": null,
+          "permalink_url": null,
+          "project_brief": null,
+          "created_from_template": null,
+          "workspace": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "project: Not a Long: 885e895f-379b-4907-a73a-dd58f14a538a",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects/885e895f-379b-4907-a73a-dd58f14a538a",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tasks/a45c647c-4231-45b9-85eb-01e2ed394140",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "a45c647c-4231-45b9-85eb-01e2ed394140",
+          "resource_type": "task",
+          "name": "Design homepage mockup",
+          "resource_subtype": "default_task",
+          "approval_status": null,
+          "assignee_status": null,
+          "completed": true,
+          "completed_at": null,
+          "completed_by": null,
+          "created_at": "2025-12-13T18:07:13.988637+05:30",
+          "dependencies": null,
+          "dependents": null,
+          "due_at": null,
+          "due_on": "2025-12-20",
+          "external": null,
+          "html_notes": null,
+          "hearted": null,
+          "hearts": null,
+          "is_rendered_as_separator": null,
+          "liked": null,
+          "likes": null,
+          "memberships": null,
+          "modified_at": "2025-12-13T18:07:13.988637+05:30",
+          "notes": "Task notes for Design homepage mockup",
+          "num_hearts": null,
+          "num_likes": 0,
+          "num_subtasks": 0,
+          "start_at": null,
+          "start_on": null,
+          "actual_time_minutes": null,
+          "assignee": null,
+          "assignee_section": null,
+          "custom_fields": null,
+          "custom_type": null,
+          "custom_type_status_option": null,
+          "followers": null,
+          "parent": null,
+          "projects": null,
+          "tags": null,
+          "workspace": null,
+          "permalink_url": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "task: Not a Long: a45c647c-4231-45b9-85eb-01e2ed394140",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tasks/a45c647c-4231-45b9-85eb-01e2ed394140",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tasks/4e635557-1d2b-426f-a7c0-feabe34939ca",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "4e635557-1d2b-426f-a7c0-feabe34939ca",
+          "resource_type": "task",
+          "name": "Implement user authentication",
+          "resource_subtype": "default_task",
+          "approval_status": null,
+          "assignee_status": null,
+          "completed": false,
+          "completed_at": null,
+          "completed_by": null,
+          "created_at": "2025-12-13T18:07:13.988637+05:30",
+          "dependencies": null,
+          "dependents": null,
+          "due_at": null,
+          "due_on": "2025-12-20",
+          "external": null,
+          "html_notes": null,
+          "hearted": null,
+          "hearts": null,
+          "is_rendered_as_separator": null,
+          "liked": null,
+          "likes": null,
+          "memberships": null,
+          "modified_at": "2025-12-13T18:07:13.988637+05:30",
+          "notes": "Task notes for Implement user authentication",
+          "num_hearts": null,
+          "num_likes": 0,
+          "num_subtasks": 0,
+          "start_at": null,
+          "start_on": null,
+          "actual_time_minutes": null,
+          "assignee": null,
+          "assignee_section": null,
+          "custom_fields": null,
+          "custom_type": null,
+          "custom_type_status_option": null,
+          "followers": null,
+          "parent": null,
+          "projects": null,
+          "tags": null,
+          "workspace": null,
+          "permalink_url": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "task: Not a Long: 4e635557-1d2b-426f-a7c0-feabe34939ca",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tasks/4e635557-1d2b-426f-a7c0-feabe34939ca",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tasks/0fb29599-c217-48a6-804a-eb049b4a7fab",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "0fb29599-c217-48a6-804a-eb049b4a7fab",
+          "resource_type": "task",
+          "name": "Create marketing materials",
+          "resource_subtype": "default_task",
+          "approval_status": null,
+          "assignee_status": null,
+          "completed": false,
+          "completed_at": null,
+          "completed_by": null,
+          "created_at": "2025-12-13T18:07:13.988637+05:30",
+          "dependencies": null,
+          "dependents": null,
+          "due_at": null,
+          "due_on": "2025-12-20",
+          "external": null,
+          "html_notes": null,
+          "hearted": null,
+          "hearts": null,
+          "is_rendered_as_separator": null,
+          "liked": null,
+          "likes": null,
+          "memberships": null,
+          "modified_at": "2025-12-13T18:07:13.988637+05:30",
+          "notes": "Task notes for Create marketing materials",
+          "num_hearts": null,
+          "num_likes": 0,
+          "num_subtasks": 0,
+          "start_at": null,
+          "start_on": null,
+          "actual_time_minutes": null,
+          "assignee": null,
+          "assignee_section": null,
+          "custom_fields": null,
+          "custom_type": null,
+          "custom_type_status_option": null,
+          "followers": null,
+          "parent": null,
+          "projects": null,
+          "tags": null,
+          "workspace": null,
+          "permalink_url": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "task: Not a Long: 0fb29599-c217-48a6-804a-eb049b4a7fab",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tasks/0fb29599-c217-48a6-804a-eb049b4a7fab",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/portfolios/2f4af8c8-f549-4e58-92d9-998d0a93952f",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "2f4af8c8-f549-4e58-92d9-998d0a93952f",
+          "resource_type": "portfolio",
+          "name": "Strategic Initiatives",
+          "archived": null,
+          "color": "green",
+          "start_on": null,
+          "due_on": null,
+          "default_access_level": null,
+          "created_at": "2025-12-13T18:07:14.013560+05:30",
+          "created_by": null,
+          "custom_field_settings": null,
+          "current_status_update": null,
+          "custom_fields": null,
+          "members": null,
+          "owner": null,
+          "workspace": null,
+          "permalink_url": null,
+          "public": false,
+          "privacy_setting": null,
+          "project_templates": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "portfolio: Not a Long: 2f4af8c8-f549-4e58-92d9-998d0a93952f",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/portfolios/2f4af8c8-f549-4e58-92d9-998d0a93952f",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/portfolios/420adca3-77e6-4e50-8f58-48a39fa3e72a",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "420adca3-77e6-4e50-8f58-48a39fa3e72a",
+          "resource_type": "portfolio",
+          "name": "pw",
+          "archived": null,
+          "color": "RED",
+          "start_on": null,
+          "due_on": null,
+          "default_access_level": null,
+          "created_at": "2025-12-13T18:07:14.013560+05:30",
+          "created_by": null,
+          "custom_field_settings": null,
+          "current_status_update": null,
+          "custom_fields": null,
+          "members": null,
+          "owner": null,
+          "workspace": null,
+          "permalink_url": null,
+          "public": false,
+          "privacy_setting": null,
+          "project_templates": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "portfolio: Not a Long: 420adca3-77e6-4e50-8f58-48a39fa3e72a",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/portfolios/420adca3-77e6-4e50-8f58-48a39fa3e72a",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/goals/8bec4e63-1ec3-489c-a2d7-c4ca2e73ac10",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "8bec4e63-1ec3-489c-a2d7-c4ca2e73ac10",
+          "resource_type": "goal",
+          "name": "Improve customer satisfaction",
+          "html_notes": null,
+          "notes": null,
+          "due_on": "2026-03-13",
+          "start_on": null,
+          "is_workspace_level": false,
+          "liked": false,
+          "likes": null,
+          "num_likes": 0,
+          "team": null,
+          "workspace": null,
+          "followers": null,
+          "time_period": null,
+          "metric": null,
+          "owner": null,
+          "current_status_update": null,
+          "status": null,
+          "custom_fields": null,
+          "custom_field_settings": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "goal: Not a Long: 8bec4e63-1ec3-489c-a2d7-c4ca2e73ac10",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/goals/8bec4e63-1ec3-489c-a2d7-c4ca2e73ac10",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/goals/0e633b24-c3aa-40a2-800e-2ee8d3702716",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "0e633b24-c3aa-40a2-800e-2ee8d3702716",
+          "resource_type": "goal",
+          "name": "ewer",
+          "html_notes": "string",
+          "notes": "string",
+          "due_on": "2025-12-13",
+          "start_on": "2025-12-13",
+          "is_workspace_level": false,
+          "liked": false,
+          "likes": null,
+          "num_likes": 0,
+          "team": null,
+          "workspace": null,
+          "followers": null,
+          "time_period": null,
+          "metric": null,
+          "owner": null,
+          "current_status_update": null,
+          "status": "string",
+          "custom_fields": null,
+          "custom_field_settings": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "goal: Not a Long: 0e633b24-c3aa-40a2-800e-2ee8d3702716",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/goals/0e633b24-c3aa-40a2-800e-2ee8d3702716",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/teams/d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+          "resource_type": "team",
+          "name": "Engineering Team",
+          "description": null,
+          "html_description": null,
+          "organization": null,
+          "permalink_url": null,
+          "visibility": null,
+          "edit_team_name_or_description_access_level": null,
+          "edit_team_visibility_or_trash_team_access_level": null,
+          "member_invite_management_access_level": null,
+          "guest_invite_management_access_level": null,
+          "join_request_management_access_level": null,
+          "team_member_removal_access_level": null,
+          "team_content_management_access_level": null,
+          "endorsed": null,
+          "custom_field_settings": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "team: Not a Long: d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/teams/d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/teams/bf0255fe-8d94-45a2-ad80-163057da8b30",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "bf0255fe-8d94-45a2-ad80-163057da8b30",
+          "resource_type": "team",
+          "name": "Product Team",
+          "description": null,
+          "html_description": null,
+          "organization": null,
+          "permalink_url": null,
+          "visibility": null,
+          "edit_team_name_or_description_access_level": null,
+          "edit_team_visibility_or_trash_team_access_level": null,
+          "member_invite_management_access_level": null,
+          "guest_invite_management_access_level": null,
+          "join_request_management_access_level": null,
+          "team_member_removal_access_level": null,
+          "team_content_management_access_level": null,
+          "endorsed": null,
+          "custom_field_settings": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "team: Not a Long: bf0255fe-8d94-45a2-ad80-163057da8b30",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/teams/bf0255fe-8d94-45a2-ad80-163057da8b30",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/workspaces/b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+      "method": "GET",
+      "local_status": 400,
+      "asana_status": 400,
+      "status_match": true,
+      "local_response": {
+        "detail": "Invalid workspace GID format"
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "workspace: Not a Long: b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/workspaces/b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+        "local_status": 400,
+        "asana_status": 400,
+        "match": true,
+        "status_match": true
+      },
+      "match": true
+    },
+    {
+      "endpoint": "/workspaces/326e3d27-bf8c-42c7-94ad-a8c55e2ee488",
+      "method": "GET",
+      "local_status": 400,
+      "asana_status": 400,
+      "status_match": true,
+      "local_response": {
+        "detail": "Invalid workspace GID format"
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "workspace: Not a Long: 326e3d27-bf8c-42c7-94ad-a8c55e2ee488",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/workspaces/326e3d27-bf8c-42c7-94ad-a8c55e2ee488",
+        "local_status": 400,
+        "asana_status": 400,
+        "match": true,
+        "status_match": true
+      },
+      "match": true
+    },
+    {
+      "endpoint": "/jobs/3ac4c94b-4e13-454a-a45b-ded1ae93307d",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "3ac4c94b-4e13-454a-a45b-ded1ae93307d",
+          "resource_type": "job",
+          "resource_subtype": "project",
+          "status": "pending",
+          "new_project": null,
+          "new_task": null,
+          "new_project_template": null,
+          "new_graph_export": null,
+          "new_resource_export": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "job: Not a Long: 3ac4c94b-4e13-454a-a45b-ded1ae93307d",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/jobs/3ac4c94b-4e13-454a-a45b-ded1ae93307d",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/jobs/0de18be4-8868-4591-a979-27a847ee9ffd",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": {
+          "gid": "0de18be4-8868-4591-a979-27a847ee9ffd",
+          "resource_type": "job",
+          "resource_subtype": "task",
+          "status": "in_progress",
+          "new_project": null,
+          "new_task": null,
+          "new_project_template": null,
+          "new_graph_export": null,
+          "new_resource_export": null
+        }
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "job: Not a Long: 0de18be4-8868-4591-a979-27a847ee9ffd",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/jobs/0de18be4-8868-4591-a979-27a847ee9ffd",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "2160a419-d194-420a-9225-e73a616ded96",
+            "resource_type": "project",
+            "name": "Website Redesign",
+            "resource_subtype": null
+          },
+          {
+            "gid": "9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+            "resource_type": "project",
+            "name": "Mobile App Development",
+            "resource_subtype": null
+          },
+          {
+            "gid": "885e895f-379b-4907-a73a-dd58f14a538a",
+            "resource_type": "project",
+            "name": "Marketing Campaign",
+            "resource_subtype": null
+          },
+          {
+            "gid": "9505aed1-0db1-47c6-b0a9-5e7603cee650",
+            "resource_type": "project",
+            "name": "Product Launch",
+            "resource_subtype": null
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "workspace: Not a Long: b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/tasks",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "a45c647c-4231-45b9-85eb-01e2ed394140",
+            "resource_type": "task",
+            "name": "Design homepage mockup",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "4e635557-1d2b-426f-a7c0-feabe34939ca",
+            "resource_type": "task",
+            "name": "Implement user authentication",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "0fb29599-c217-48a6-804a-eb049b4a7fab",
+            "resource_type": "task",
+            "name": "Create marketing materials",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "c9761ad3-f5b0-4c78-9877-2172b487eec0",
+            "resource_type": "task",
+            "name": "Write product documentation",
+            "resource_subtype": "default_task"
+          },
+          {
+            "gid": "d35bbe61-db58-41bb-ab97-5a5aaad31aab",
+            "resource_type": "task",
+            "name": "Set up CI/CD pipeline",
+            "resource_subtype": "default_task"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "workspace: Not a Long: b9e19f22-9c9b-4d74-bb9e-71d04b302c51",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/tasks",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/projects",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "2160a419-d194-420a-9225-e73a616ded96",
+            "resource_type": "project",
+            "name": "Website Redesign",
+            "resource_subtype": null
+          },
+          {
+            "gid": "9ca2102c-c8d5-405b-abb7-1e6ccb10bd65",
+            "resource_type": "project",
+            "name": "Mobile App Development",
+            "resource_subtype": null
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "team: Not a Long: d8c69ff3-a939-4de9-be7e-341616b5c7ba",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/projects",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    },
+    {
+      "endpoint": "/portfolios/2f4af8c8-f549-4e58-92d9-998d0a93952f/portfolio_memberships",
+      "method": "GET",
+      "local_status": 200,
+      "asana_status": 400,
+      "status_match": false,
+      "local_response": {
+        "data": [
+          {
+            "gid": "0721921b-f6ee-45aa-bf2f-8e25ad0c32f8",
+            "resource_type": "portfolio_membership",
+            "parent": {
+              "gid": "2f4af8c8-f549-4e58-92d9-998d0a93952f",
+              "resource_type": "portfolio",
+              "name": "Strategic Initiatives"
+            },
+            "member": {
+              "gid": "1c4c55f5-2358-4e8a-bcb2-b2fd46470be9",
+              "resource_type": "user",
+              "name": "John Doe"
+            },
+            "access_level": "full"
+          },
+          {
+            "gid": "491cafde-c8c1-4eb7-abef-71ce2727d5b7",
+            "resource_type": "portfolio_membership",
+            "parent": {
+              "gid": "2f4af8c8-f549-4e58-92d9-998d0a93952f",
+              "resource_type": "portfolio",
+              "name": "Strategic Initiatives"
+            },
+            "member": {
+              "gid": "d616e6f4-5e67-47ef-bef0-84b55e213e7f",
+              "resource_type": "user",
+              "name": "Jane Smith"
+            },
+            "access_level": "editor"
+          },
+          {
+            "gid": "219eb32d-20b9-4fa0-b543-54432b610f03",
+            "resource_type": "portfolio_membership",
+            "parent": {
+              "gid": "2f4af8c8-f549-4e58-92d9-998d0a93952f",
+              "resource_type": "portfolio",
+              "name": "Strategic Initiatives"
+            },
+            "member": {
+              "gid": "2a7cee86-39e4-4008-af00-ecd51b8fe74a",
+              "resource_type": "user",
+              "name": "Bob Johnson"
+            },
+            "access_level": "editor"
+          }
+        ]
+      },
+      "asana_response": {
+        "errors": [
+          {
+            "message": "portfolio: Not a Long: 2f4af8c8-f549-4e58-92d9-998d0a93952f",
+            "help": "For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors"
+          }
+        ]
+      },
+      "comparison": null,
+      "status_comparison": {
+        "endpoint": "/portfolios/2f4af8c8-f549-4e58-92d9-998d0a93952f/portfolio_memberships",
+        "local_status": 200,
+        "asana_status": 400,
+        "match": false,
+        "status_match": false
+      },
+      "match": false
+    }
+  ]
+}

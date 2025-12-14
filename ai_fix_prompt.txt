@@ -1,0 +1,82 @@
+# API Comparison Differences - Fix Request
+
+The following endpoints have differences between the local API and Asana API.
+Please analyze and fix the code to match Asana's API responses.
+
+## Differences Found: 1
+
+
+### Endpoint: GET /workspaces
+
+**Status Codes:**
+- Local: 200
+- Asana: 200
+
+**Extra Fields in Local API:**
+  - [1].resource_type
+  - [1].name
+  - [1].is_organization
+  - [0].is_organization
+
+**Value Differences:**
+```json
+{
+  "values_changed": {
+    "root[0]": {
+      "new_value": {
+        "resource_type": "workspace",
+        "name": "Acme Corporation",
+        "is_organization": true
+      },
+      "old_value": {
+        "resource_type": "workspace",
+        "name": "My workspace"
+      }
+    }
+  },
+  "iterable_item_added": {
+    "root[1]": {
+      "resource_type": "workspace",
+      "name": "Tech Startup Inc",
+      "is_organization": false
+    }
+  }
+}
+```
+
+**Asana Response Sample:**
+```json
+[
+  {
+    "resource_type": "workspace",
+    "name": "My workspace"
+  }
+]...
+```
+
+**Local Response Sample:**
+```json
+[
+  {
+    "resource_type": "workspace",
+    "name": "Acme Corporation",
+    "is_organization": true
+  },
+  {
+    "resource_type": "workspace",
+    "name": "Tech Startup Inc",
+    "is_organization": false
+  }
+]...
+```
+
+---
+
+
+## Action Required
+
+Please:
+1. Review each difference
+2. Update the endpoint code to match Asana's response structure
+3. Ensure all fields are present with correct types
+4. Verify nested objects match Asana's format

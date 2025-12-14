@@ -1,0 +1,40 @@
+# API Fix Request
+
+The following endpoints need to be fixed to match Asana's API responses.
+
+Please review each endpoint and update the code accordingly.
+
+
+## GET /workspaces
+
+### Extra Fields
+The following fields are in your API but not in Asana's API:
+
+- `[1].name`
+- `[1].resource_type`
+- `[1].is_organization`
+- `[0].is_organization`
+
+**Action Required:** Remove these fields or mark them as optional/hidden.
+
+### Value Differences
+Field values or types don't match Asana's API.
+
+**Action Required:** Review the detailed differences in `api_comparison_report.json` and update field types/values.
+
+---
+
+
+## General Instructions
+
+1. Review the endpoint code in `endpoints/` directory
+2. Update response schemas in `schemas/` directory if needed
+3. Ensure all fields match Asana's API structure
+4. Test the endpoint after making changes
+5. Re-run the comparison script to verify fixes
+
+## Files to Review
+
+- `endpoints/{endpoint_name}.py` - Endpoint implementation
+- `schemas/{schema_name}.py` - Response schemas
+- `models/{model_name}.py` - Database models (if schema changes needed)
